@@ -1,5 +1,4 @@
 # vehicle-builder
-# Vehicle Builder CLI Application
 
 This is a TypeScript command-line application that allows users to create and interact with Cars, Trucks, and Motorbikes.
 
