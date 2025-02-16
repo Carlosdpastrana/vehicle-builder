@@ -1,8 +1,10 @@
 // Wheel class that defines the properties of a wheel
 class Wheel {
   // Declare properties of the Wheel class using private access modifier
-  private diameter: number;
+  
+  public diameter: number;
   private tireBrand: string;
+  brand: any;
 
   // Constructor for the Wheel class
   constructor(diameter: number = 18, tireBrand: string = "GoodYear") {

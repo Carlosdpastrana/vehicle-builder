@@ -242,7 +242,7 @@ class Cli {
 
   // method to find a vehicle to tow
   // TODO: add a parameter to accept a truck object
-  findVehicleToTow(): void {
+  findVehicleToTow(truck: Truck): void {
     inquirer
       .prompt([
         {
@@ -282,6 +282,8 @@ class Cli {
             'Turn right',
             'Turn left',
             'Reverse',
+            'Tow a vehicle', 
+            'Do a wheelie',
             'Select or create another vehicle',
             'Exit',
           ],
@@ -348,6 +350,23 @@ class Cli {
         }
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
+        else if (answers.action === 'Tow a vehicle') {
+          const selectedVehicle = this.vehicles.find((v) => v.vin === this.selectedVehicleVin);
+          if (selectedVehicle instanceof Truck) {
+            this.findVehicleToTow(selectedVehicle);
+            return; // Important: prevents looping right back into performActions() before towing is done
+          } else {
+            console.log('Only trucks can tow vehicles.');
+          }
+        } else if (answers.action === 'Do a wheelie') {
+          const selectedVehicle = this.vehicles.find((v) => v.vin === this.selectedVehicleVin);
+          if (selectedVehicle instanceof Motorbike) {
+            selectedVehicle.wheelie();
+          } else {
+            console.log('Only motorbikes can do a wheelie.');
+          }
+        }
+        
         else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();

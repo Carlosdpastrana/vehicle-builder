@@ -1,7 +1,7 @@
 {
   "name": "develop",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a TypeScript command-line application that allows users to create and interact with Cars, Trucks, and Motorbikes.",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -12,11 +12,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.19",
-    "typescript": "^5.4.5"
+    "inquirer": "^9.3.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.12.7"
-  }
+  },
+  "keywords": []
 }
