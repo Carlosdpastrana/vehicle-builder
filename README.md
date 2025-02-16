@@ -8,7 +8,7 @@ This is a TypeScript command-line application that allows users to create and in
 - View and select existing vehicles
 
 ## Video Walkthrough
-[Click here to watch the walkthrough video](PASTE_YOUR_VIDEO_LINK_HERE)
+[Click here to watch the walkthrough video](https://drive.google.com/file/d/1OQH1a58RPzVDLWM6RFF-QAoGNqbbh5nZ/view?usp=drive_link)
 
 ## Installation
 ```bash
