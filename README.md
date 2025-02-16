@@ -4,7 +4,7 @@ This is a TypeScript command-line application that allows users to create and in
 
 ## Features
 - Create a Car, Truck, or Motorbike
-- Perform actions like Drive, Haul Load (Truck), and Pop a Wheelie (Motorbike)
+- Perform actions like Drive, Tow a vehicle (Truck), and Pop a Wheelie (Motorbike)
 - View and select existing vehicles
 
 ## Video Walkthrough
