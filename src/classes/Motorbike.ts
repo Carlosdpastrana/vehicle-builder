@@ -6,8 +6,13 @@ import Wheel from './Wheel.js';
 class Motorbike extends Vehicle {
   // TODO: Declare properties of the Motorbike class
   // TODO: The properties should include vin, color, make, model, year, weight, top speed, and wheels
-  make: string = '';
-  model: string = '';
+  override vin: string = '';
+  override color: string = '';
+  override make: string = '';
+  override model: string = '';
+  override year: number = 0;
+  override weight: number = 0;
+  override topSpeed: number = 0;
   // TODO: The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[])
   wheels: Wheel[];
 
@@ -25,10 +30,16 @@ class Motorbike extends Vehicle {
     topSpeed: number,
     wheels: Wheel[]
   ) {
-    
-    super();
+    super(vin, color, make, model, year, weight, topSpeed);
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
     this.wheels = wheels;
-
+  
     if (this.wheels.length !== 2) {
       this.wheels = [new Wheel(18, 'DefaultBrand'), new Wheel(18, 'DefaultBrand')];
     }
@@ -46,6 +57,13 @@ class Motorbike extends Vehicle {
   // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
   override printDetails(): void {
     super.printDetails();
+    console.log(`VIN: ${this.vin}`);
+    console.log(`Make: ${this.make}`);
+    console.log(`Model: ${this.model}`);
+    console.log(`Year: ${this.year}`);
+    console.log(`Weight: ${this.weight}`);
+    console.log(`Top Speed: ${this.topSpeed}`);
+    console.log(`Color: ${this.color}`);
     console.log(`Wheels: ${this.wheels.map(wheel => `${wheel.brand} (${wheel.diameter} inches)`).join(', ')}`);
   }
 }

@@ -1,14 +1,28 @@
 // Vehicle class that implements Driveable interface
 class Vehicle {
     // Constructor for the Vehicle class
-    constructor() {
+    constructor(vin, color, make, model, year, weight, topSpeed) {
+        this.vin = vin;
+        this.color = color;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.weight = weight;
+        this.topSpeed = topSpeed;
         this.started = false;
         this.currentSpeed = 0;
     }
     // Method to print vehicle details
     printDetails() {
-        console.log(`Vehicle started: ${this.started}`);
-        console.log(`Vehicle current speed: ${this.currentSpeed} mph`);
+        console.log(`VIN: ${this.vin}`);
+        console.log(`Make: ${this.make}`);
+        console.log(`Model: ${this.model}`);
+        console.log(`Year: ${this.year}`);
+        console.log(`Weight: ${this.weight}`);
+        console.log(`Top Speed: ${this.topSpeed}`);
+        console.log(`Color: ${this.color}`);
+        console.log(`Started: ${this.started}`);
+        console.log(`Current Speed: ${this.currentSpeed} mph`);
     }
     // Method to start the vehicle
     start() {

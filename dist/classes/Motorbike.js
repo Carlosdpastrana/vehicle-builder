@@ -8,11 +8,23 @@ class Motorbike extends Vehicle {
     // TODO: The constructor should initialize the properties of the Motorbike class
     // TODO: The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
     constructor(vin, color, make, model, year, weight, topSpeed, wheels) {
-        super();
+        super(vin, color, make, model, year, weight, topSpeed);
         // TODO: Declare properties of the Motorbike class
         // TODO: The properties should include vin, color, make, model, year, weight, top speed, and wheels
+        this.vin = '';
+        this.color = '';
         this.make = '';
         this.model = '';
+        this.year = 0;
+        this.weight = 0;
+        this.topSpeed = 0;
+        this.vin = vin;
+        this.color = color;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.weight = weight;
+        this.topSpeed = topSpeed;
         this.wheels = wheels;
         if (this.wheels.length !== 2) {
             this.wheels = [new Wheel(18, 'DefaultBrand'), new Wheel(18, 'DefaultBrand')];
@@ -29,6 +41,13 @@ class Motorbike extends Vehicle {
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
     printDetails() {
         super.printDetails();
+        console.log(`VIN: ${this.vin}`);
+        console.log(`Make: ${this.make}`);
+        console.log(`Model: ${this.model}`);
+        console.log(`Year: ${this.year}`);
+        console.log(`Weight: ${this.weight}`);
+        console.log(`Top Speed: ${this.topSpeed}`);
+        console.log(`Color: ${this.color}`);
         console.log(`Wheels: ${this.wheels.map(wheel => `${wheel.brand} (${wheel.diameter} inches)`).join(', ')}`);
     }
 }

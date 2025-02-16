@@ -7,7 +7,7 @@ import Cli from "./classes/Cli.js";
 import Vehicle from "./classes/Vehicle.js";
 
 // create an array of vehicles
-const vehicles: Car[] = [];
+const vehicles: (Truck | Car | Motorbike)[] = [];
 
 // TODO: uncomment once trucks are implemented
 const truck1 = new Truck(Cli.generateVin(),"red", "Ford", "F-150", 2021, 5000, 120, 0, []);
@@ -33,7 +33,7 @@ const motorbike1 = new Motorbike(Cli.generateVin(), "black", "Harley Davidson", 
 vehicles.push(truck1);
 vehicles.push(car1);
 // TODO: uncomment once motorbikes are implemented
-vehicles.push(motorbike1 as unknown as Car);
+vehicles.push(motorbike1 as Car);
 
 // create a new instance of the Cli class
 const cli = new Cli(vehicles);
