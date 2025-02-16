@@ -30,30 +30,30 @@ class Cli {
 
   // method to choose a vehicle from existing vehicles
   chooseVehicle(): void {
+    if (this.vehicles.length === 0) {
+      console.log('No vehicles available. Please create a vehicle first.');
+      this.startCli(); // Return to the start menu
+      return;
+    }
+  
     inquirer
       .prompt([
         {
           type: 'list',
           name: 'selectedVehicleVin',
           message: 'Select a vehicle to perform an action on',
-          choices: this.vehicles.map((vehicle) => {
-            if (vehicle instanceof Car) {
-              return {
-                name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
-                value: vehicle.vin,
-              };
-            }
-            return null;
-          }),
+          choices: this.vehicles.map((vehicle) => ({
+            name: `${vehicle.vin} -- ${vehicle.make} ${vehicle.model}`,
+            value: vehicle.vin,
+          })),
         },
       ])
       .then((answers) => {
-        // set the selectedVehicleVin to the vin of the selected vehicle
         this.selectedVehicleVin = answers.selectedVehicleVin;
-        // perform actions on the selected vehicle
         this.performActions();
       });
   }
+  
 
   // method to create a vehicle
   createVehicle(): void {
